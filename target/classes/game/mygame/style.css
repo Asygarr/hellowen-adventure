@@ -1,0 +1,9 @@
+.root {
+    -fx-background-image: url("assets/background_main.jpg");
+    -fx-background-size: cover;
+}
+
+#start {
+    -fx-background-image: url("assets/green_button01.jpg");
+    -fx-background-size: cover;
+}
