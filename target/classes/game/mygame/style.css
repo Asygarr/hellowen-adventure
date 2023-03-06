@@ -7,3 +7,13 @@
     -fx-background-image: url("assets/green_button01.jpg");
     -fx-background-size: cover;
 }
+
+#peringkat {
+    -fx-background-image: url("assets/green_button01.jpg");
+    -fx-background-size: cover;
+}
+
+#kembali {
+    -fx-background-image: url("assets/green_button01.jpg");
+    -fx-background-size: cover;
+}

@@ -7,14 +7,25 @@ import java.sql.ResultSet;
 
 public class DB {
 
-    private String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private String DB_URL = "jdbc:mysql://localhost:3306/hellowen_adventure";
-    private String USER = "root";
-    private String PASS = "";
+    final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    final String DB_URL = "jdbc:mysql://localhost/hellowen_adventure";
+    final String USER = "root";
+    final String PASS = "";
 
     private Connection conn;
     private Statement stmt;
     private ResultSet rs;
+
+    public Connection getConnection() {
+        try {
+            Class.forName(JDBC_DRIVER);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return conn;
+    }
 
     public void setNamaUser(String namaUser) {
         try {
@@ -26,7 +37,7 @@ public class DB {
             stmt.executeUpdate(sql);
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
@@ -40,7 +51,7 @@ public class DB {
             stmt.executeUpdate(sql);
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
@@ -54,7 +65,7 @@ public class DB {
             stmt.executeUpdate(sql);
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
