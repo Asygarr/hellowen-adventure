@@ -8,6 +8,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Switch {
 
@@ -16,10 +17,11 @@ public class Switch {
     private AnchorPane pan;
 
     public void switchPane(String pane, ActionEvent event) throws IOException {
-        pan = FXMLLoader.load(getClass().getResource("game.fxml"));
+        pan = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(pane)));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(pan);
-        stage.setTitle("Game Hellowen Adventure");
+        stage.setResizable(false);
+        stage.setTitle("Hellowen Adventure");
         stage.setScene(scene);
         stage.show();
     }

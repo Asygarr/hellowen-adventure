@@ -3,7 +3,6 @@ package game.mygame;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-import java.sql.ResultSet;
 
 public class DB {
 
@@ -14,7 +13,6 @@ public class DB {
 
     private Connection conn;
     private Statement stmt;
-    private ResultSet rs;
 
     public Connection getConnection() {
         try {
