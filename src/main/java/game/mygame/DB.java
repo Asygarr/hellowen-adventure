@@ -19,7 +19,7 @@ public class DB {
             Class.forName(JDBC_DRIVER);
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         return conn;
